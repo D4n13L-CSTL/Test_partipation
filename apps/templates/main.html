@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <h1 style="text-align: center;">Examen nivel basico</h1>
+    <div id="pruebas">
+        {% for pregunta in preguntas %}
+        <br><hr>
+
+        
+        {% if loop.index == 4 %}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ pregunta }}</p>
+            <pre><code>
+                a = 5
+                b = 3
+                print(a > b and b < 2)
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+        {% elif loop.index == 5 %}
+        
+        <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+        <p>{{ pregunta }}</p>
+        
+        <select name="respuesta" data-index="{{ loop.index0 }}">
+            <option value="">--Selecciona una opción--</option>
+            {%for i in repuesta_if%}
+            <option value="{{i}}">{{i}}</option>
+            {%endfor%}
+        </select>
+        {% elif loop.index == 6 %}
+        
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ pregunta }}</p>
+            <pre><code>
+                for i in range(3): 
+                    print(i)
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+        {% elif loop.index == 7 %}
+                <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+                <p>{{ pregunta }}</p>
+                <select name="respuesta" data-index="{{ loop.index0 }}">
+                    <option value="">--Selecciona una opción--</option>
+                    {%for k in respuetas7%}
+                    <option value="{{k}}">{{k}} </option>
+                    {%endfor%}
+                </select>
+        {% elif loop.index == 9 %}
+                    <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+                    <p>{{ pregunta }}</p>
+                    <select name="respuesta" data-index="{{ loop.index0 }}">
+                        <option value="">--Selecciona una opción--</option>
+                        {%for j in respuesta9%}
+                        <option value="{{j}}">{{j}} </option>
+                        {%endfor%}
+                    </select>
+            
+
+        {% else %}
+            <p><strong>Pregunta {{ loop.index }}:</strong></p>
+            <p>{{ pregunta }}</p>
+            <input type="text" name="respuesta" data-index="{{ loop.index0 }}">
+        {% endif %}
+        
+        {% if loop.index == 3 %}
+            <br><br> <!-- Salto de línea después de la tercera pregunta -->
+        {% endif %}
+    {% endfor %}
+    
+        <button id="enviarTodo">Enviar</button>
+    </div>
+</body>
+</html>
+
+<script src="../static/js/basico.js"></script>
+    

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Examen Intermedio</h1>
+    <div id="pruebas">
+        
+        {%for preguntas in ask%}
+        <br><hr>
+        {% if loop.index == 1 %}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                def suma(lista):  
+                    total = 0  
+                    for num in lista:  
+                         total += num  
+                    return total
+                print(suma([1, 2, 3]))
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r1 in respuestas1%}
+                <option value="{{r1}}">{{r1}}</option>
+                {%endfor%}
+            </select>
+
+            {% elif loop.index == 2 %}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                lista = [3, 1, 4, 1, 5]  
+                print(lista[::-1])
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r2 in opciones2%}
+                <option value="{{r2}}">{{r2}}</option>
+                {%endfor%}
+            </select>
+        
+            {% elif loop.index == 3 %}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r3 in opciones3%}
+                <option value="{{r3}}">{{r3}}</option>
+                {%endfor%}
+            </select>
+            
+            {% elif loop.index == 4 %}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                    def maximo(lista):  
+                     max = lista[0]  
+                     for num in lista:  
+                         if _______:  
+                             max = num  
+                     return max
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r4 in opciones_4%}
+                <option value="{{r4}}">{{r4}}</option>
+                {%endfor%}
+            </select>
+
+            {% elif loop.index == 5%}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                 for i in range(1, 5):  
+                     if i % 2 == 0:  
+                         continue  
+                     print(i)
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r5 in opciones_5%}
+                <option value="{{r5}}">{{r5}}</option>
+                {%endfor%}
+            </select>
+            {% elif loop.index == 6%}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r6 in opciones_6%}
+                <option value="{{r6}}">{{r6}}</option>
+                {%endfor%}
+            </select>
+
+            {% elif loop.index == 7%}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                 x = [1, 2, 3]  
+                 y = x  
+                 y.append(4)  
+                 print(x)
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r7 in opciones_7%}
+                <option value="{{r7}}">{{r7}}</option>
+                {%endfor%}
+            </select>
+            {% elif loop.index == 8%}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                def recursivo(n):  
+                     if n == 0:  
+                         return 0  
+                     return n + recursivo(n-1)
+                
+                print(recursivo(10))
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r8 in opciones_8%}
+                <option value="{{r8}}">{{r8}}</option>
+                {%endfor%}
+            </select>
+            {% elif loop.index == 9%}
+            
+            <p><strong>Pregunta {{ loop.index }} (selección múltiple):</strong></p>
+            <p>{{ preguntas }}</p>
+            <pre><code>
+                 x = [1, 2, 3]  
+                 print(x.pop())
+            </code></pre>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r9 in opciones_9%}
+                <option value="{{r9}}">{{r9}}</option>
+                {%endfor%}
+            </select>
+        {% else %}
+        <p><strong>Pregunta {{ loop.index }}:</strong></p>
+            <p>{{ preguntas }}</p>
+            <select name="respuesta" data-index="{{ loop.index0 }}">
+                <option value="">--Selecciona una opción--</option>
+                {%for r10 in opciones_10%}
+                <option value="{{r10}}">{{r10}}</option>
+                {%endfor%}
+            </select>
+        {% endif %}
+
+        {%endfor%}
+        <button id="enviarTodo">Enviar</button>
+    </div>
+</body>
+<script src="../static/js/intermedio.js"></script>
+</html>
