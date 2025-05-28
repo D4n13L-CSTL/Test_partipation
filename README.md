@@ -41,7 +41,7 @@ El propósito de esta aplicación es ofrecer una herramienta interactiva de eval
 ```bash
 # Clonar el repositorio
 git clone https://github.com/D4n13L-CSTL/Test_partipation.git
-cd test-logica-python
+cd Test_partipation
 
 # Crear entorno virtual (opcional)
 python -m venv venv
