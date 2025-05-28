@@ -40,7 +40,7 @@ El propósito de esta aplicación es ofrecer una herramienta interactiva de eval
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tuusuario/test-logica-python.git
+git clone https://github.com/D4n13L-CSTL/Test_partipation.git
 cd test-logica-python
 
 # Crear entorno virtual (opcional)
